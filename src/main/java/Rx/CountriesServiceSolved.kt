@@ -32,14 +32,16 @@ class CountriesServiceSolved : CountriesService {
         return Observable.fromIterable(thirdandforth)
     }
 
-//    override fun isAllCountriesPopulationMoreThanOneMillion(countries: List<Country>): Single<Boolean>? {
-//        return null // put your solution here
-//    }
-//
-//    override fun listPopulationMoreThanOneMillion(countries: List<Country>): Observable<Country>? {
-//        return null // put your solution here
-//    }
-//
+    override fun isAllCountriesPopulationMoreThanOneMillion(countries: List<Country>): Single<Boolean> {
+        val value = Observable.fromIterable(countries).all { it.population > 1000000 }
+        return value
+    }
+
+    override fun listPopulationMoreThanOneMillion(countries: List<Country>): Observable<Country> {
+        val filtered = Observable.fromIterable(countries).filter{it.population > 1000000}
+        return filtered
+    }
+
 //    override fun listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(countriesFromNetwork: FutureTask<List<Country>>): Observable<Country> {
 //        return null // put your solution here
 //    }

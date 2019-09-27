@@ -15,12 +15,12 @@ interface CountriesService {
     fun listPopulationOfEachCountry(countries: List<Country>): Observable<Long>
 
     fun listNameOfEachCountry(countries: List<Country>): Observable<String>
-//
-//    fun listOnly3rdAnd4thCountry(countries: List<Country>): Observable<Country>
-//
-//    fun isAllCountriesPopulationMoreThanOneMillion(countries: List<Country>): Single<Boolean>
-//
-//    fun listPopulationMoreThanOneMillion(countries: List<Country>): Observable<Country>
+
+    fun listOnly3rdAnd4thCountry(countries: List<Country>): Observable<Country>
+
+    fun isAllCountriesPopulationMoreThanOneMillion(countries: List<Country>): Single<Boolean>
+
+    fun listPopulationMoreThanOneMillion(countries: List<Country>): Observable<Country>
 
     /**
      * @param countriesFromNetwork an async task which is sometimes very very slow

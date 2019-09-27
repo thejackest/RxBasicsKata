@@ -75,47 +75,47 @@ public class CountriesServiceSolvedTest {
         testObserver.assertNoErrors();
     }
 
-//    @Test
-//    public void rx_ListOnly3rdAnd4thCountry() {
-//        List<Country> expectedResult = new ArrayList<>();
-//        expectedResult.add(allCountries.get(2));
-//        expectedResult.add(allCountries.get(3));
-//
-//        TestObserver<Country> testObserver = countriesService
-//                .listOnly3rdAnd4thCountry(allCountries)
-//                .test();
-//        testObserver.assertValueSet(expectedResult);
-//        testObserver.assertNoErrors();
-//    }
-//
-//    @Test
-//    public void rx_IsAllCountriesPopulationMoreThanOneMillion_Positive() {
-//        TestObserver<Boolean> testObserver = countriesService
-//                .isAllCountriesPopulationMoreThanOneMillion(CountriesTestProvider.countriesPopulationMoreThanOneMillion())
-//                .test();
-//        testObserver.assertResult(true);
-//        testObserver.assertNoErrors();
-//    }
-//
-//    @Test
-//    public void rx_IsAllCountriesPopulationMoreThanOneMillion_Negative() {
-//        TestObserver<Boolean> testObserver = countriesService
-//                .isAllCountriesPopulationMoreThanOneMillion(allCountries)
-//                .test();
-//        testObserver.assertResult(false);
-//        testObserver.assertNoErrors();
-//    }
-//
-//    @Test
-//    public void rx_ListPopulationMoreThanOneMillion() {
-//        List<Country> expectedResult = CountriesTestProvider.countriesPopulationMoreThanOneMillion();
-//        TestObserver<Country> testObserver = countriesService
-//                .listPopulationMoreThanOneMillion(allCountries)
-//                .test();
-//        testObserver.assertValueSet(expectedResult);
-//        testObserver.assertNoErrors();
-//    }
-//
+    @Test
+    public void rx_ListOnly3rdAnd4thCountry() {
+        List<Country> expectedResult = new ArrayList<>();
+        expectedResult.add(allCountries.get(2));
+        expectedResult.add(allCountries.get(3));
+
+        TestObserver<Country> testObserver = countriesService
+                .listOnly3rdAnd4thCountry(allCountries)
+                .test();
+        testObserver.assertValueSet(expectedResult);
+        testObserver.assertNoErrors();
+    }
+
+    @Test
+    public void rx_IsAllCountriesPopulationMoreThanOneMillion_Positive() {
+        TestObserver<Boolean> testObserver = countriesService
+                .isAllCountriesPopulationMoreThanOneMillion(CountriesTestProvider.countriesPopulationMoreThanOneMillion())
+                .test();
+        testObserver.assertResult(true);
+        testObserver.assertNoErrors();
+    }
+
+    @Test
+    public void rx_IsAllCountriesPopulationMoreThanOneMillion_Negative() {
+        TestObserver<Boolean> testObserver = countriesService
+                .isAllCountriesPopulationMoreThanOneMillion(allCountries)
+                .test();
+        testObserver.assertResult(false);
+        testObserver.assertNoErrors();
+    }
+
+    @Test
+    public void rx_ListPopulationMoreThanOneMillion() {
+        List<Country> expectedResult = CountriesTestProvider.countriesPopulationMoreThanOneMillion();
+        TestObserver<Country> testObserver = countriesService
+                .listPopulationMoreThanOneMillion(allCountries)
+                .test();
+        testObserver.assertValueSet(expectedResult);
+        testObserver.assertNoErrors();
+    }
+
 //    @Test
 //    public void rx_ListPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty_When_NoTimeout() {
 //        FutureTask<List<Country>> futureTask = new FutureTask<>(() -> {
