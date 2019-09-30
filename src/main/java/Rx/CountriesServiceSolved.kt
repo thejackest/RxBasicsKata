@@ -4,6 +4,7 @@ import java.util.concurrent.FutureTask
 
 import io.reactivex.Observable
 import io.reactivex.Single
+import java.util.concurrent.TimeUnit
 
 class CountriesServiceSolved : CountriesService {
 
@@ -42,10 +43,12 @@ class CountriesServiceSolved : CountriesService {
         return filtered
     }
 
-//    override fun listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(countriesFromNetwork: FutureTask<List<Country>>): Observable<Country> {
-//        return null // put your solution here
-//    }
-//
+    override fun listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(countriesFromNetwork: FutureTask<List<Country>>): Observable<Country> {
+        val filtered = countriesFromNetwork.get().filter{it.population > 1000000}
+        val fallbackEmpty = Observable.fromIterable(filtered).timeout(1000, TimeUnit.MILLISECONDS)
+        return fallbackEmpty // put your solution here
+    }
+
 //    override fun getCurrencyUsdIfNotFound(countryName: String, countries: List<Country>): Observable<String>? {
 //        return null // put your solution here
 //    }

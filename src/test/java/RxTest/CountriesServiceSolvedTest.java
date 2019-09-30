@@ -116,23 +116,23 @@ public class CountriesServiceSolvedTest {
         testObserver.assertNoErrors();
     }
 
-//    @Test
-//    public void rx_ListPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty_When_NoTimeout() {
-//        FutureTask<List<Country>> futureTask = new FutureTask<>(() -> {
-//            TimeUnit.MILLISECONDS.sleep(100);
-//            return allCountries;
-//        });
-//        new Thread(futureTask).start();
-//        TestObserver<Country> testObserver = countriesService
-//                .listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(futureTask)
-//                .test();
-//        List<Country> expectedResult = CountriesTestProvider.countriesPopulationMoreThanOneMillion();
-//        testObserver.awaitTerminalEvent();
-//        testObserver.assertComplete();
-//        testObserver.assertValueSet(expectedResult);
-//        testObserver.assertNoErrors();
-//    }
-//
+    @Test
+    public void rx_ListPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty_When_NoTimeout() {
+        FutureTask<List<Country>> futureTask = new FutureTask<>(() -> {
+            TimeUnit.MILLISECONDS.sleep(100);
+            return allCountries;
+        });
+        new Thread(futureTask).start();
+        TestObserver<Country> testObserver = countriesService
+                .listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(futureTask)
+                .test();
+        List<Country> expectedResult = CountriesTestProvider.countriesPopulationMoreThanOneMillion();
+        testObserver.awaitTerminalEvent();
+        testObserver.assertComplete();
+        testObserver.assertValueSet(expectedResult);
+        testObserver.assertNoErrors();
+    }
+
 //    @Test
 //    public void rx_ListPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty_When_Timeout() {
 //        FutureTask<List<Country>> futureTask = new FutureTask<>(() -> {

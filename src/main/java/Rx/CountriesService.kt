@@ -26,7 +26,7 @@ interface CountriesService {
      * @param countriesFromNetwork an async task which is sometimes very very slow
      * @return the filtered values from the [FutureTask] or an [Observable.empty] if there are no values within 1 second
      */
-//    fun listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(countriesFromNetwork: FutureTask<List<Country>>): Observable<Country>
+    fun listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(countriesFromNetwork: FutureTask<List<Country>>): Observable<Country>
 //
 //    fun getCurrencyUsdIfNotFound(countryName: String, countries: List<Country>): Observable<String>
 //
