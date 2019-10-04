@@ -45,8 +45,8 @@ class CountriesServiceSolved : CountriesService {
 
     override fun listPopulationMoreThanOneMillionWithTimeoutFallbackToEmpty(countriesFromNetwork: FutureTask<List<Country>>): Observable<Country> {
         val filtered = countriesFromNetwork.get().filter{it.population > 1000000}
-        val fallbackEmpty = Observable.fromIterable(filtered).timeout(1, TimeUnit.HOURS)
-        return fallbackEmpty // put your solution here
+        val fallbackEmpty = Observable.fromIterable(filtered).timeout(12, TimeUnit.HOURS)
+        return fallbackEmpty
     }
 
 //    override fun getCurrencyUsdIfNotFound(countryName: String, countries: List<Country>): Observable<String>? {
